@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/5cdd6224ca.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+
+</head>
+<body>
+    <!--Nav Bar / Heading-->
+    <nav class="navbar navbar-dark bg-dark ">
+        <span class="navbar-brand mb-0 h1 mx-auto font-weight-bolder">Weather Dashboard</span>
+    </nav>
+
+    <!--Content Grid-->
+    <div class="container pt-1">
+        <div class="row">
+            <!--Left Column-->
+            <div class="col-4 bg-light">
+                <!--Search Form-->
+                <div class="card">
+                    <h3 class="card-header">Search for a City:</h3>
+                    <form id="user-form" class="card-body">
+                        <input name="city" id="city" type="text" autofocus="true" class="form-input" />
+                        <button type="submit" id="searchBtn" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>  
+                <!--Previous Searches-->
+                <div id="btn-group" class="btn-group-vertical w-100">
+                </div>
+            </div>
+
+            <!--Right Column-->
+            <div class="col-8">
+                <div class="row ">
+                    <!--City Current Weather Section-->
+                    <div id="city-data" class="col p-3">
+                    </div>
+                </div>
+                <!--City 5-day Forecast Section-->
+                <div id="five-day-heading" class="row mt-2 ml-1"></div>
+                <div id="five-day" class="col mr-0 card-deck"></div>
+            </div>
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./assets/js/test.js"></script>
+</body>
+</html>

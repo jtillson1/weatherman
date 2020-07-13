@@ -99,6 +99,7 @@ else {
     };
  };
 //end of current weather container 
+
 //begin forecast 
  var getForecast = function(cityName) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=263c76e2bd90911c40bad2b37dc3d48c&units=imperial";
@@ -111,6 +112,7 @@ else {
         }
     });
  };
+
 var displayForecast = function(info) {
     var firstDay = (currentDate.getMonth()+1)+'/'+(currentDate.getDate()+1)+'/'+currentDate.getFullYear();
     var secondDay = (currentDate.getMonth()+1)+'/'+(currentDate.getDate()+2)+'/'+currentDate.getFullYear();
@@ -154,22 +156,22 @@ var displayForecast = function(info) {
     forecastContainer.textContent = "";
     forecastHeading.textContent = "";
 
-    //create forecast heading
-    var forecastTitle = document.createElement("h3");
-    forecastTitle.textContent = "5-Day Forecast:";
+     //create forecast heading
+  var forecastTitle = document.createElement("h3");
+  forecastTitle.textContent = "5-Day Forecast:";
 
-    forecastContainer.appendChild(forecastTitle);
+  forecastContainer.appendChild(forecastTitle);
 
     //loop for forecast cards
 
     for (i = 0; i < dataArr.length; i++) {
         //create forecast card 
         var cardEl = document.createElement("div");
-        cardEl.classList.add("card", "text-light", "bg-primary", "m-1");
+        cardEl.classList.add("card", "text-light", "bg-primary", "m-1", );
 
         //create card info 
         var cardBodyEl = document.createElement("div");
-        cardBodyEl.classList.add("card-body", "p-1");
+        cardBodyEl.classList.add("card-body", "p-2");
 
         var cardTitleEl = document.createElement("h5");
         cardTitleEl.textContent = dataArr[i].day;

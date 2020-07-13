@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.hero {
+   background-color: rgba(0, 0, 0, 0.7);
+   color: white;
+   font-size: 28px;
+   text-align: center;
+   padding: 10px 0;
+   font-weight: 400;
+}

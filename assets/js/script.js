@@ -180,6 +180,14 @@ var displayForecast = function(info) {
 
         cardBodyEl.appendChild(cardTempEl);
 
+        //create forecast card humidities
+        var cardHumidityEl = document.createElement("p");
+        cardHumidityEl.classList.add("card-text");
+        cardHumidityEl.textContent = "Humidity: " + dataArr[i].hum +"%";
+        cardBodyEl.appendChild(cardHumidityEl);
+
+        cardEl.appendChild(cardBodyEl);
+        forecastContainer.appendChild(cardEl);
 
 
 

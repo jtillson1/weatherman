@@ -1,4 +1,6 @@
-
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -10,8 +12,4 @@ body {
    padding: 10px 0;
    font-weight: 400;
 }
-.form-input {
-    font-size: 20px;
-}
 
-263c76e2bd90911c40bad2b37dc3d48c

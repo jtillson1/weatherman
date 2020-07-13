@@ -42,7 +42,7 @@ else {
  };
  //forecast for the week
  var getForecast = function(cityName) {
-    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=263c76e2bd90911c40bad2b37dc3d48c&units=imperial";
+    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=263c76e2bd90911c40bad2b37dc3d48c&units=imperial";
 
     fetch(apiUrl).then(function(response) {
         if(response.ok) {
@@ -55,15 +55,48 @@ else {
         }
     });
  };
-//display da city heading 
+//display the data for the current weather (top right section)
  var displayWeather = function(info, cityName) {
     var cityHeadingEl = document.createElement("h3");
     cityHeadingEl.textContent = cityName + "("+date+")";
 
     cityDataContainer.appendChild(cityHeadingEl);
+//display temp
+    var displayTemperatureEl = document.createElement("h6");
+    displayTemperatureEl.textContent = "Temperature: " + info.main.temp + "\u00b0";
 
-    var displayTemperature = document.createElement("h6");
-    displayTemperature.textContent = "Temperature: " + info.main.temp + "\u00b0";
+    cityDataContainer.appendChild(displayTemperatureEl);
+    //dispay humidity
+    var displayHumidityEl = document.createElement("h6");
+    displayHumidityEl.textContent = "Humidity: " + info.main.humidity + "%";
+     
+    cityDataContainer.appendChild(displayHumidityEl);
+    //display windspped
+    var displayWindspeedEl = document.createElement("h6");
+    displayWindspeedEl.textContent = "Wind Speed: " + info.wind.speed + " mph";
 
-    cityDataContainer.appendChild(displayTemperature);
- }
+    cityDataContainer.appendChild(displayWindspeedEl);
+    //UV index 1.fetch from api 2.create the element 3. display it 
+    var uvUrl = "https://api.openweathermap.org/data/2.5/uvi?q=&appid=263c76e2bd90911c40bad2b37dc3d48c" + info.coord.lat + "&lon=" + info.coord.lon;
+
+    fetch(uvurl).then(function(response) {
+        response.json().then(function(data) {
+            UV(data);
+        });
+    });
+
+    var UV = function (info) {
+        var displayUV = document.createElement("h6");
+        displayUV.textContent = "UV Index: " + info.value;
+
+        cityDataContainer.appendChild(displayUV);
+        //color code based on value returned
+        if (info.value < = 3) {
+            displayUV.classList.add("text-success");
+        }else if (info.value > 3) {
+            displayUV.classList.add("text-warning");
+        }else if (info.value > = 9) {
+            displayUV.classList.add("text-danger");
+        };
+    };
+ };
